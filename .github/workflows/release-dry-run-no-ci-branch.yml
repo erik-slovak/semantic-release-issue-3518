@@ -1,4 +1,4 @@
-name: Release (dry run) - `no-ci` flag + branch
+name: Release (dry run) - `no-ci` flag + branches
 on:
   pull_request:
     types:
