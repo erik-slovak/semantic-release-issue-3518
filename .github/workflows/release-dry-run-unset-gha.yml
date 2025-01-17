@@ -23,6 +23,8 @@ jobs:
           echo "PR_HEAD_REF=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
       - run: |
           unset GITHUB_ACTIONS
+          node -e "const config = require('./.releaserc.dryrun.js'); console.log(JSON.stringify(config, null, 2));"
+          echo "pr env: $PR_HEAD_REF"
           echo "env: $GITHUB_ACTIONS"
           GITHUB_ACTIONS="" yarn semantic-release --extends ./.releaserc.dryrun.js
         env:
