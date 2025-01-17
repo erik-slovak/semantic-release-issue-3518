@@ -21,12 +21,7 @@ jobs:
       - uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4
       - run: |
           echo "PR_HEAD_REF=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
-      - run: |
-          unset GITHUB_ACTIONS
-          node -e "const config = require('./.releaserc.dryrun.js'); console.log(JSON.stringify(config, null, 2));"
-          echo "pr env: $PR_HEAD_REF"
-          echo "env: $GITHUB_ACTIONS"
-          GITHUB_ACTIONS="" yarn semantic-release --extends ./.releaserc.dryrun.js
+      - run: GITHUB_ACTIONS="" yarn semantic-release --extends ./.releaserc.dryrun.js
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_DRY_RUN_NPM_TOKEN }}
