@@ -21,7 +21,7 @@ jobs:
       - uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4
       - run: |
           echo "PR_HEAD_REF=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
-      - run: yarn semantic-release --no-ci --dry-run --extends ./src/index.js
+      - run: yarn semantic-release --dry-run --no-ci --extends ./src/index.js
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_DRY_RUN_NPM_TOKEN }}
