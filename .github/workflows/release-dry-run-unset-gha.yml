@@ -26,9 +26,3 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_DRY_RUN_NPM_TOKEN }}
           SLACK_WEBHOOK: ${{ secrets.SEMANTIC_RELEASE_SLACK_WEBHOOK }}
-      - name: Send a Slack message on failure
-        if: failure()
-        uses: technology-studio/github-workflows/.github/actions/slack-failed-job-message@main
-        with:
-          slack_bot_token: ${{ secrets.TXO_SLACK_BOT_APP_TOKEN }}
-          channel_id: ${{ secrets.TXO_SLACK_GITHUB_OPS_CHANNEL_ID }}
