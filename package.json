@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/technology-studio/semantic-release.git"
+    "url": "https://github.com/erik-slovak/semantic-release-issue-3518.git"
   },
   "author": {
     "name": "Technology Studio",
