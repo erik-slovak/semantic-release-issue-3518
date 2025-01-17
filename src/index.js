@@ -34,12 +34,12 @@ const plugins = [
       ],
     },
   }],
-  ['semantic-release-slack-bot',
-    {
-      notifyOnSuccess: true,
-      notifyOnFail: true,
-    },
-  ],
+  // ['semantic-release-slack-bot',
+  //   {
+  //     notifyOnSuccess: true,
+  //     notifyOnFail: true,
+  //   },
+  // ],
   '@semantic-release/changelog',
   '@semantic-release/npm',
   '@semantic-release/github',
